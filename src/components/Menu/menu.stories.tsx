@@ -3,13 +3,15 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import Menu from "./menu";
-import MenuItem from './menuItem'
-import SubMenu from './subMenu'
+import MenuItem from "./menuItem";
+import SubMenu from "./subMenu";
 
 const defaultMenu = () => (
-    <Menu
+  <Menu
     defaultIndex="0"
-    onSelect={(index) => {action(`clicked ${index} item`)}}
+    onSelect={(index) => {
+      action(`clicked ${index} item`);
+    }}
   >
     <MenuItem>111</MenuItem>
     <MenuItem>222</MenuItem>
@@ -22,9 +24,11 @@ const defaultMenu = () => (
 );
 
 const MenuWithVertical = () => (
-    <Menu
+  <Menu
     defaultIndex="0"
-    onSelect={(index) => {action(`clicked ${index} item`)}}
+    onSelect={(index) => {
+      action(`clicked ${index} item`);
+    }}
     mode="vertical"
     defaultOpenSubMenus={["2"]}
   >
@@ -40,4 +44,4 @@ const MenuWithVertical = () => (
 
 storiesOf("Menu Component", module)
   .add("Menu", defaultMenu)
-  .add("MenuWithVertical", MenuWithVertical)
+  .add("MenuWithVertical", MenuWithVertical);

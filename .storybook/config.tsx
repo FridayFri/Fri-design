@@ -17,7 +17,7 @@ addDecorator(withInfo);
 addParameters({
   info: {
     inline: true,
-    header: true,
+    header: false,
   },
 });
 
