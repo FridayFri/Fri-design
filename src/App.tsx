@@ -6,6 +6,7 @@ import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Icon from "./components/Icon/icon";
+import {Input} from './components/Input/input'
 library.add(fas);
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Button btnType='default' size='sm'>
         Small Default
       </Button>
+      <Input style={{width: '300px'}} size='lg'/>
     </div>
   );
 }
