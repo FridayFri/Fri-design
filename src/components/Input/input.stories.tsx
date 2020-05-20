@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import { Input } from "./input";
 const ControlledInput = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
   return (
     <Input
       value={value}
       defaultValue={value}
-      onChange={(e) => {
+      onChange={(e:ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
       }}
     />
