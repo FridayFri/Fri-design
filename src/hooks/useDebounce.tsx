@@ -12,4 +12,3 @@ function useDebounce(value: any, delay = 300) {
   return debouncedValue;
 }
 export default useDebounce;
-  

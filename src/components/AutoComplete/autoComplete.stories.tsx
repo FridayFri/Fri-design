@@ -58,18 +58,17 @@ const defaultAutoComplete = () => {
     return fetch(`https://api.github.com/search/users?q=${query}`)
       .then(res => res.json())
       .then(({ items }) => {
-        console.log(items)
         return items.slice(0, 10).map((item: any) => ({ value: item.login, ...item}))
       })
   }
   const handleSelect = (value: DataSourceType) => {
-    console.log("select", value);
   };
-  const renderOption = (item: DataSourceType<GithubUserProps>) => {
+  const renderOption = (item: DataSourceType) => {
+    const itemWithGithub = item as DataSourceType<GithubUserProps>
     return (
       <>
-        <h2>{item.login}</h2>
-        <p>{item.url}</p>
+        <h2>{itemWithGithub.value}</h2>
+        <p>{itemWithGithub.url}</p>
       </>
     );
   };
