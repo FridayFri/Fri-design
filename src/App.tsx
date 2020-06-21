@@ -7,10 +7,12 @@ import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Icon from "./components/Icon/icon";
 import {Input} from './components/Input/input'
+import Loading from './components/Loading'
 library.add(fas);
 function App() {
   return (
     <div className="App">
+      <Loading />
       <Icon icon='arrow-down' theme="primary" size="10x"/>
       <Menu
         defaultIndex="0"
