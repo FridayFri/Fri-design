@@ -19,11 +19,11 @@ function App() {
         id="apple"
         value="apple"
         disabled={false}
-        onChange={(event): void =>{}}
+        onChange={(event): void =>{console.log(event.target.checked)}}
       >
         苹果
       </CheckBox>
-      <Mask style={{ backgroundColor: "rgba(0,0,0,0.1)" }} />
+      {/* <Mask style={{ backgroundColor: "rgba(0,0,0,0.1)" }} /> */}
       <Loading />
       <Icon icon="arrow-down" theme="primary" size="10x" />
       <Menu

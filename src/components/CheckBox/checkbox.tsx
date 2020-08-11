@@ -23,13 +23,25 @@ interface CheckboxProps {
 }
 
 const CheckBox: FC<CheckboxProps> = (props) => {
-  const { disabled, name, value, id, children, indeterminate } = props;
+  const {
+    disabled,
+    name,
+    value,
+    id,
+    children,
+    indeterminate,
+    onChange,
+  } = props;
   const [checked, setChecked] = useState(props.checked ?? true);
   const _handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    if (disabled) {
+      return;
+    }
     setChecked(event.target.checked);
+    onChange && onChange(event);
   };
   return (
-    <label className="checkbox-wrapper">
+    <label className={classNames("checkbox-wrapper", { disabled })}>
       <span
         className={classNames("checkbox", {
           checked,
@@ -48,6 +60,7 @@ const CheckBox: FC<CheckboxProps> = (props) => {
         />
         <span className="checkbox-inner" />
       </span>
+      <span> {children} </span>
     </label>
   );
 };
