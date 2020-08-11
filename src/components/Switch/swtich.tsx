@@ -10,23 +10,23 @@ export interface SwitchProps {
   on?: string;
   off?: string;
   checked: boolean;
-  onChange: (e: React.MouseEvent) => void;
+  onChange?: (e: React.MouseEvent) => void;
 }
 
 const Switch: FC<SwitchProps> = (props) => {
   const { className, style, on, off, disabled, type, ...restProps } = props;
-  const { checked, setChecked } = useState(props.checked);
+  // const { checked, setChecked } = useState(props.checked);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    if (!disabled) {
-      setChecked(e.target.checked);
-    }
+    // if (!disabled) {
+    //   setChecked(e.target.checked);
+    // }
   };
   return (
     <input
       {...restProps}
       className={classNames("switch", className)}
       style={style}
-      data-text={checked ? on : off}
+      // data-text={checked ? on : off}
       onChange={handleChange}
     />
   );

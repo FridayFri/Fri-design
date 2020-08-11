@@ -6,16 +6,26 @@ import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Icon from "./components/Icon/icon";
-import {Input} from './components/Input/input'
-import Loading from './components/Loading'
-import Mask from './components/Mask/mask'
+import { Input } from "./components/Input/input";
+import Loading from "./components/Loading";
+import Mask from "./components/Mask/mask";
+import CheckBox from "./components/CheckBox/checkbox";
 library.add(fas);
 function App() {
   return (
     <div className="App">
-      <Mask style={{backgroundColor: 'rgba(0,0,0,0.1)'}}/>
+      <CheckBox
+        checked={true}
+        id="apple"
+        value="apple"
+        disabled={false}
+        onChange={(event): void =>{}}
+      >
+        苹果
+      </CheckBox>
+      <Mask style={{ backgroundColor: "rgba(0,0,0,0.1)" }} />
       <Loading />
-      <Icon icon='arrow-down' theme="primary" size="10x"/>
+      <Icon icon="arrow-down" theme="primary" size="10x" />
       <Menu
         defaultIndex="0"
         onSelect={(index) => {
@@ -33,19 +43,19 @@ function App() {
         <MenuItem>333</MenuItem>
       </Menu>
       <Button>hello</Button>
-      <Button btnType='primary' size='lg'>
+      <Button btnType="primary" size="lg">
         hello
       </Button>
-      <Button btnType='link' href="https://www.baidu.com">
+      <Button btnType="link" href="https://www.baidu.com">
         Link
       </Button>
-      <Button btnType='danger' size='lg'>
+      <Button btnType="danger" size="lg">
         Danger Large
       </Button>
-      <Button btnType='default' size='sm'>
+      <Button btnType="default" size="sm">
         Small Default
       </Button>
-      <Input style={{width: '300px'}} size='lg'/>
+      <Input style={{ width: "300px" }} size="lg" />
     </div>
   );
 }
